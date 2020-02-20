@@ -18,8 +18,8 @@ let card = []
 $("#searchForm").on("submit", function (event) {
   event.preventDefault()
   let city = document.getElementById("searchCity").value
-  let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=be8970edab66a09fa656ce2ee581855a&units=imperial"
-  let queryURL2 = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=be8970edab66a09fa656ce2ee581855a&units=imperial"
+  let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=be8970edab66a09fa656ce2ee581855a&units=imperial"
+  let queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=be8970edab66a09fa656ce2ee581855a&units=imperial"
   //let uvIndex="http://api.openweathermap.org/data/2.5/uvi?appid="appid+lat"={lat}&lon={lon}"
 
   //console.log("it works")
