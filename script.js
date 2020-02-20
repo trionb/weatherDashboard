@@ -10,7 +10,8 @@ init()
 let searchbtn = $("#form-control mr-sm-2").val();
 
 let card = []
-
+let lat=""
+let lon=""
 // let key = "be8970edab66a09fa656ce2ee581855a"
 
 //create on click for search btn
@@ -20,23 +21,37 @@ $("#searchForm").on("submit", function (event) {
   let city = document.getElementById("searchCity").value
   let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=be8970edab66a09fa656ce2ee581855a&units=imperial"
   let queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=be8970edab66a09fa656ce2ee581855a&units=imperial"
-  //let uvIndex="http://api.openweathermap.org/data/2.5/uvi?appid="appid+lat"={lat}&lon={lon}"
 
   //console.log("it works")
   $.ajax({
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    console.log(response)
-    console.log(queryURL);
-    console.log(JSON.stringify(response));
-    console.log(response.main.temp);
-    console.log(response.main.humidity);
-    console.log(response.wind.speed);
+    // console.log(response)
+    // console.log(queryURL);
+    // console.log(JSON.stringify(response));
+    // console.log(response.main.temp);
+    // console.log(response.main.humidity);
+    // console.log(response.wind.speed);
     $("#currentCity").text(response.name);
+    $("#currentCity").text(response.date);
     $("#currentTemp").text(response.main.temp);
     $("#currentHumidity").text(response.main.humidity);
     $("#currentWindSpeed").text(response.wind.speed);
+    lat = response.coord.lat;
+    lon=response.coord.lon;
+    let uvIndex="http://api.openweathermap.org/data/2.5/uvi?&appid=be8970edab66a09fa656ce2ee581855a&&lat="+  lat + "&lon="+ lon 
+
+    $.ajax({
+      url: uvIndex,
+      method: "GET",
+  }).then(function (response) {
+      console.log(response)
+      $("#currentUvIndex").text(response.value);
+
+
+      //lat=response
+      })
 
   })
 
@@ -44,12 +59,12 @@ $("#searchForm").on("submit", function (event) {
     url: queryURL2,
     method: "GET",
   }).then(function (response) {
-    console.log(response)
+    //console.log(response)
     for (let i = 0; i < response.list.length; i++) {
       //console.log(response.list[i].dt)
       if (response.list[i].dt_txt.includes("09:00:00")) {
-        console.log(response.list[i].main.temp);
-        console.log(response.list[i].main.humidity);
+        //console.log(response.list[i].main.temp);
+        //console.log(response.list[i].main.humidity);
         icon = response.list[i].weather[0].icon
         createIcon(icon);
         //$("#5DayForecast").append(response.main.humidity);
@@ -59,13 +74,7 @@ $("#searchForm").on("submit", function (event) {
       }
     }
   })
-  // $.ajax({
-  //     url: uvIndex,
-  //     method: "GET",
-  // }).then(function (response) {
-  //     console.log(response)
-  //     })
-
+  
 })
 function createIcon(icon) {
   let queryIconURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
