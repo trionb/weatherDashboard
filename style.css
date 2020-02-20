@@ -1,0 +1,98 @@
+h1{
+    margin: 450px;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+.card{
+    margin-left: 20px;
+}
+
+.card1{
+    display:flex;
+}
+
+div.card-body{
+    position: relative;
+    width: 100%;
+    border: solid rgb(223, 221, 221);
+    padding: 10px;
+} 
+
+div.card-body1 {
+   display:flex;
+   width: 100%;
+    padding: 0px;
+  margin:auto;
+  height: 170px;
+  background-color: dodgerblue;
+  color: white;
+
+} 
+
+/* di.v.card-body1{
+    position: absolute;
+    left: 310px;
+    width: 130px;
+    height: 150px;
+    border: solid rgb(223, 221, 221);
+    padding: 10px;
+    bottom: 9px;
+    margin-left: 150px;
+    background-color: #4869EC;
+    color: white; */
+
+}
+/* div.card-body2{
+    position: absolute;
+    left: 310px;
+    width: 130px;
+    height: 150px;
+    border: solid rgb(223, 221, 221);
+    padding: 10px;
+    bottom: 9px;
+    margin-left: 30px;
+    background-color: #4869EC;
+    color: white;
+
+}
+div.card-body3{
+    position: absolute;
+    left: 310px;
+    width: 130px;
+    height: 150px;
+    border: solid rgb(223, 221, 221);
+    padding: 10px;
+    bottom: 9px;
+    margin-left: 10px;
+    background-color: #4869EC;
+    color: white;
+
+}
+div.card-body4{
+    position: absolute;
+    left: 310px;
+    width: 130px;
+    height: 150px;
+    border: solid rgb(223, 221, 221);
+    padding: 10px;
+    bottom: 11px;
+    margin-left: 10px;
+    background-color: #4869EC; 
+    color: white;
+
+}
+div.card-body5{
+    position: absolute;
+    left: 310px;
+    width: 130px;
+    height: 150px;
+    border: solid rgb(223, 221, 221);
+    padding: 10px;
+    bottom: 13px;
+    margin-left: 10px;
+    background-color: #4869EC;
+    color: white; */
+
+}  
