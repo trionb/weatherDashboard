@@ -130,7 +130,7 @@ search.addEventListener("submit", function (event) {
   storeCity();
   renderCities(cities);
 
-
+// comment
 
 
   //api for weather display with icons
