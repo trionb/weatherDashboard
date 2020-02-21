@@ -61,11 +61,25 @@ $("#searchForm").on("submit", function (event) {
   }).then(function (response) {
     console.log(response)
     for (let i = 0; i < response.list.length; i++) {
-      //console.log(response.list[i].dt)
+      console.log(response.list[i].dt)
       if (response.list[i].dt_txt.includes("09:00:00")) {
-        //console.log(response.list[i].main.temp);
+        $("#currentTemp2").text(response.list[i].main.temp);
+        $("#currentHumidity2").text(response.list[i].main.humidity);
+        $("#currentTemp3").text(response.list[i].main.temp);
+        $("#currentHumidity3").text(response.list[i].main.humidity);
+        $("#currentTemp4").text(response.list[i].main.temp);
+        $("#currentHumidity4").text(response.list[i].main.humidity);
+        $("#currentTemp5").text(response.list[i].main.temp);
+        $("#currentHumidity5").text(response.list[i].main.humidity);
+        $("#currentTemp6").text(response.list[i].main.temp);
+        $("#currentHumidity6").text(response.list[i].main.humidity);
+
+
+
+        
         //console.log(response.list[i].main.humidity);
-       // $("#forecast1").text(response.main.humidity);
+        //$("#currentTemp2").text(response.main.temp);
+        //$("#currentHumidity2").text(response.main.humidity);
         icon = response.list[i].weather[0].icon
         createIcon(icon);
        
@@ -83,7 +97,7 @@ function createIcon(icon) {
 
 }
 
-let city = ["Austin", "Chicago", "New York", "Orlando", "San Francisco", "Seattle", "Denver"];
+//let city = ["Austin", "Chicago", "New York", "Orlando", "San Francisco", "Seattle", "Denver"];
 
 
 //create on click for ul
