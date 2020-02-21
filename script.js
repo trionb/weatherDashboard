@@ -27,10 +27,10 @@ $("#searchForm").on("submit", function (event) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    // console.log(response)
-    // console.log(queryURL);
-    // console.log(JSON.stringify(response));
-    // console.log(response.main.temp);
+    //  console.log(response)
+    //  console.log(queryURL);
+    //  console.log(JSON.stringify(response));
+    //  console.log(response.main.temp);
     // console.log(response.main.humidity);
     // console.log(response.wind.speed);
     $("#currentCity").text(response.name);
@@ -38,6 +38,7 @@ $("#searchForm").on("submit", function (event) {
     $("#currentTemp").text(response.main.temp);
     $("#currentHumidity").text(response.main.humidity);
     $("#currentWindSpeed").text(response.wind.speed);
+    //$("#icon2").text(response.list[i].weather[0].icon);
     lat = response.coord.lat;
     lon=response.coord.lon;
     let uvIndex="http://api.openweathermap.org/data/2.5/uvi?&appid=be8970edab66a09fa656ce2ee581855a&&lat="+  lat + "&lon="+ lon 
@@ -46,7 +47,7 @@ $("#searchForm").on("submit", function (event) {
       url: uvIndex,
       method: "GET",
   }).then(function (response) {
-      console.log(response)
+      //console.log(response)
       $("#currentUvIndex").text(response.value);
 
 
@@ -65,6 +66,7 @@ $("#searchForm").on("submit", function (event) {
       if (response.list[i].dt_txt.includes("09:00:00")) {
         $("#currentTemp2").text(response.list[i].main.temp);
         $("#currentHumidity2").text(response.list[i].main.humidity);
+       // $("#icon2).text(response.list[i].weather[0].icon)
         $("#currentTemp3").text(response.list[i].main.temp);
         $("#currentHumidity3").text(response.list[i].main.humidity);
         $("#currentTemp4").text(response.list[i].main.temp);
@@ -94,6 +96,12 @@ $("#searchForm").on("submit", function (event) {
 function createIcon(icon) {
   let queryIconURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
   $("#currentCity").append("<img src=" + queryIconURL + ">")
+
+  let queryIconURL2 = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
+  $("#forecast1").append("<img src=" + queryIconURL2 + ">")
+
+  // let queryIconURL2 = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
+  // $("#forecast2").append("<img src=" + queryIconURL2 + ">")
 
 }
 
