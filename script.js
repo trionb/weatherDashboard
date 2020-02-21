@@ -59,15 +59,16 @@ $("#searchForm").on("submit", function (event) {
     url: queryURL2,
     method: "GET",
   }).then(function (response) {
-    //console.log(response)
+    console.log(response)
     for (let i = 0; i < response.list.length; i++) {
       //console.log(response.list[i].dt)
       if (response.list[i].dt_txt.includes("09:00:00")) {
         //console.log(response.list[i].main.temp);
         //console.log(response.list[i].main.humidity);
+       // $("#forecast1").text(response.main.humidity);
         icon = response.list[i].weather[0].icon
         createIcon(icon);
-        //$("#5DayForecast").append(response.main.humidity);
+       
 
         //console.log(icon)
         //("#currentCity").append(response.list.length);
@@ -78,7 +79,7 @@ $("#searchForm").on("submit", function (event) {
 })
 function createIcon(icon) {
   let queryIconURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
-  $("#5DayForecast").append("<img src=" + queryIconURL + ">")
+  $("#currentCity").append("<img src=" + queryIconURL + ">")
 
 }
 

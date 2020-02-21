@@ -16,11 +16,19 @@ h1{
 div.card-body{
     position: relative;
     width: 100%;
-    border: solid rgb(223, 221, 221);
-    padding: 10px;
+    border: solid #1e79f1;
+    background-color: #1e79f1;;
+    /* padding: 10px; */
 } 
 
-div.card-body1 {
+div.cardBody{
+    position: relative;
+    width: 100%;
+    padding: 10px; 
+    border: solid #1e79f1;
+    
+} 
+/* div.card-body1 {
    display:flex;
    width: 100%;
     padding: 0px;
@@ -29,7 +37,7 @@ div.card-body1 {
   background-color: dodgerblue;
   color: white;
 
-} 
+}  */
 
 /* di.v.card-body1{
     position: absolute;
